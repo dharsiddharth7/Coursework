@@ -1,0 +1,21 @@
+Siddharth Dhar
+dhar1@purdue.edu
+Lab-4
+
+----PART-1----
+
+In thr2.cc, a call to printC() method occurs before the creation of the two threads. Thus, the program enters the while(1) loop and keeps printing character 'C' until the program is killed with SIGINT. On the other hand, the code snippet in thr1.cc continuously creates new threads in the while(1) loop. The outcome of this leads to the printingout characters 'A', 'B' and 'C' on STDOUT in no particular order until the program is killed by SIGINT.
+
+----PART-2----
+
+*-------------------------------*---------------*--------------*---------------*
+|				|  System Time  |  User Time   |   Real Time   |
+*-------------------------------*---------------*--------------*---------------*
+|pthread_mutex(count)		|   1.468	|   1.412      |    1.451      |
+|spin lock(thr_yield) 		|   0.108	|   0.444      |    0.311      |
+|spin lock(without thr_yield)	|   0.000	|   1.624      |    0.863      |
+*-------------------------------*---------------*--------------*---------------*
+
+Ans 1) The differences in user time in count_spin with and without thr_yield is due to the system handling the polling for thread. The thr_yield() method forces the spin lock to execute in the system space, instead of in user space. Without calling thr_yield(), the spin lock executes in user space and not the system space.
+
+Ans 2) The difference is between count busy waiting on the threads which yields a faster response time to thread completion. The mutex lock in count runs in the user space and provides each thread with a mutually exclusive lock on the portion of the code that is being executed.
