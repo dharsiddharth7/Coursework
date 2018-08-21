@@ -1,0 +1,10 @@
+task33 "A A A AA" "A"               : 5   of 5  
+task33 "O o AA" "o"                 : 5   of 5  
+task33 "1231123" "1"                : 5   of 5  
+task33 "A B C D A B C D" "C"        : 5   of 5  
+task33 "Hello world" "world"        : 5   of 5  
+task33 "Hello hEllo HELLO HellO hello_world" "HellO" : 0   of 5  
+task33 "What is the word for censor word function" "word" : 5   of 5  
+task33 "Yet another compiler compiler is called YACC" "compiler" : 5   of 5  
+task33 "Do not trouble trouble until trouble troubles you" "troubles" : 5   of 5  
+task33 "Do not trouble trouble until trouble troubles you" "Troubles" : 5   of 5  
